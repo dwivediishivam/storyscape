@@ -64,4 +64,4 @@ jobs:
         with:
           app-name: 'storyscape'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B596C1CB7EFA4D14AC697163259B7BFD }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
