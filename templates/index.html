@@ -89,28 +89,28 @@
         });
         </script>
         
-    <script>
-        document.getElementById('saveButton').addEventListener('click', function(event) {
-    event.preventDefault();
-    var storyTheme = document.querySelector('input[name="storyTheme"]:checked').value;
-    var storyStart = document.getElementById('storyStart').value;
-
-    fetch('/storyteller', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({storyTheme: storyTheme, storyStart: storyStart})
-    })
-    .then(response => response.json())
-    .then(data => {
-        alert("Generated Story: " + data.story);
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-    });
-});
-    </script>
+        <script>
+          document.getElementById('saveButton').addEventListener('click', function(event) {
+              event.preventDefault();
+              var storyTheme = document.querySelector('input[name="storyTheme"]:checked').value;
+              var storyStart = document.getElementById('storyStart').value;
+      
+              fetch('/', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({storyTheme: storyTheme, storyStart: storyStart})
+              })
+              .then(response => response.json())
+              .then(data => {
+                  alert("Generated Story: " + data.story); // Optionally, update the DOM to display the story
+              })
+              .catch((error) => {
+                  console.error('Error:', error);
+              });
+          });
+      </script>      
         
 </body>
 </html>
